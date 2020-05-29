@@ -10,7 +10,7 @@ Pull in the data from JSON API and show it in Drupal site or store the data in D
 
 * In this case, though showing the data without storing can save space in database, allowing the data to be stored as content type in Drupal 8 will give us the flexibility to show in any form in Drupal.
 
-* I am going to use the Feeds module in order to get the data and store it as a content type in Drupal.
+* I am going to use the Feeds and Feeds Extensible parsers module in order to get the data and store it as a content type in Drupal.
 
 **Why feeds module?**
 
@@ -51,4 +51,28 @@ Feature will allow us to bundle below configuration into one.
 Enough of theory; let us dive into implementation right away for each step.
 
 ### Step 1 - Pull data to Drupal:
-Let us create the underlying content type to store the data from JSON API.
+Let us create the underlying content type to store the data from JSON API. Below is the content type with fields.
+![NFL Content Type](images/NFL_Content_type_fields.png)
+
+You can see that Conference and Division are entity reference since they have repeated values to choose from. Also the *display_name* field shall be mapped to default *Title* field in Drupal.
+
+Let us now configure the Feeds type to import the JSON data to the content type create above.
+
+Below is the basic configuration for the Feeds followed by fetcher and processor settings.
+![Feeds basic configuration](images/Feeds_basic_config.png)
+![Feeds fetcher configuration](images/Feeds_fetcher_setting.png)
+![Feeds processor configuration](images/Feeds_processor_setting.png)
+
+The next important step is doing the mapping as below.
+![Feeds mapping configuration](images/Feeds_mapping.png)
+
+After this is done I have added the feed under Content->Feeds. Below is the added feed.
+![Feed added](images/Added_feed.png)
+
+The above feed will automatically pull the data on set interval. Once the feed is added click on *Save and Import* button. This will import the feed and create content in Drupal as shown below.
+![Imported Content](images/Content_imported.png)
+
+Below is example content.
+![Example content](images/Example_content.png)
+
+Thats it! We have successfully configured Drupal to pull in content from given JSON API.
