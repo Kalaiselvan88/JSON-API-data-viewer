@@ -51,6 +51,11 @@ Feature will allow us to bundle below configuration into one.
 Enough of theory; let us dive into implementation right away for each step.
 
 ### Step 1 - Pull data to Drupal:
+
+**Pre-requisite**: The Feeds and Feeds extensible parsers module are installed using composer as below.
+
+`composer require drupal/feeds_ex`
+
 Let us create the underlying content type to store the data from JSON API. Below is the content type with fields.
 ![NFL Content Type](images/NFL_Content_type_fields.png)
 
@@ -76,3 +81,21 @@ Below is example content.
 ![Example content](images/Example_content.png)
 
 Thats it! We have successfully configured Drupal to pull in content from given JSON API.
+
+### Step 2 - Show data in Drupal: 
+First download the Data Tables module from https://www.drupal.org/project/datatables using composer. Also make sure the Data Tables library is put inside the */libraries* folder of Drupal.
+
+`composer require drupal/datatables`
+
+Now let us create a view using Data Tables to show the data in a redable format for the user. Below is the screenshot of the view configuration.
+![Views configuration](images/view_config.png)
+
+Once the views is done, navigate to the page and you can see the table displayed with searching and pagination options as shown below.
+![Data in table](images/NFL_teams_shown.png)
+
+Filtering will show only that data in table.
+![Data filtering](images/Data_filtering.png)
+
+As you can see the data can also be exported in different formats using the buttons above the table.
+
+And we are done with step-2. Now let us proceed with packaging our solution into a module.
