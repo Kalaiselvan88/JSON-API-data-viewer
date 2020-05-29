@@ -37,7 +37,6 @@ The module I am going to use is Data Tables.
 
 This provides us responsive table view along with the option to filter our data
 
-
 ### Step 3 – Package the solution into a portable one:
 There are different set of configurations involved in above solution. So it is always necessary we have this portable so that this can be moved to different environments and also re-used in different sites. Features module will solve this purpose.
 
