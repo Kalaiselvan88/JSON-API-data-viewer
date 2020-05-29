@@ -13,9 +13,11 @@ Pull in the data from JSON API and show it in Drupal site or store the data in D
 * I am going to use the Feeds module in order to get the data and store it as a content type in Drupal.
 
 **Why feeds module?**
+
 Feeds module allows us to periodically get the data and refresh it in our content type without our intervention. Once stored in Content type we can use Views module to show the data in any format. 
 
 **Why not Views Query Plugin?**
+
 We can also write a Views Query Plugin to parse the data from API and render it in views. But it requires a lot of custom Plugin code which needs to be tested for correctness. Instead we can use existing contributed modules like Feeds which are already tested and used by multiple sites. In this way we get upgraded versions of the module for Drupal 9 too. If we are writing custom code, we need to make sure the upgrade for future Drupal 
 versions are done by us which needs more time to be invested in future.
 
@@ -32,6 +34,7 @@ Based on above facts I decide to show the data in Table format with filtering op
 The module I am going to use is Data Tables.
 
 **Why Data Tables?**
+
 This provides us responsive table view along with the option to filter our data
 
 
@@ -39,6 +42,7 @@ This provides us responsive table view along with the option to filter our data
 There are different set of configurations involved in above solution. So it is always necessary we have this portable so that this can be moved to different environments and also re-used in different sites. Features module will solve this purpose.
 
 **Why Features?**
+
 Feature will allow us to bundle below configuration into one.
 1. The content type used to store the JSON API data.
 2. The Feeds used to pull and refresh the JSON API data.
