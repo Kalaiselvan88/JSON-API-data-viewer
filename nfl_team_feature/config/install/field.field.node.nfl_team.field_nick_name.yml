@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nick_name
+    - node.type.nfl_team
+id: node.nfl_team.field_nick_name
+field_name: field_nick_name
+entity_type: node
+bundle: nfl_team
+label: 'Nick Name'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
