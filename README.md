@@ -84,5 +84,3 @@ Filtering will show only that data in table.
 ![Data filtering](images/Data_filtering.png)
 
 As you can see the data can also be exported in different formats using the buttons above the table.
-
-And we are done with step 2. Now let us proceed with packaging our solution into a module.
