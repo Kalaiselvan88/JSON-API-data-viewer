@@ -37,19 +37,6 @@ The module I am going to use is Data Tables.
 
 This provides us responsive table view along with the option to filter our data
 
-### Step 3 – Package the solution into a portable one:
-There are different set of configurations involved in above solution. So it is always necessary we have this portable so that this can be moved to different environments and also re-used in different sites. Features module will solve this purpose.
-
-**Why Features?**
-
-Feature will allow us to bundle below configuration into one.
-1. The content type used to store the JSON API data.
-2. The Feeds used to pull and refresh the JSON API data.
-3. The Views and Data Tables configuration to show the data
-
-## Implementation:
-Enough of theory; let us dive into implementation right away for each step.
-
 ### Step 1 - Pull data to Drupal:
 
 **Pre-requisite**: The Feeds and Feeds extensible parsers module are installed using composer as below.
@@ -99,14 +86,3 @@ Filtering will show only that data in table.
 As you can see the data can also be exported in different formats using the buttons above the table.
 
 And we are done with step 2. Now let us proceed with packaging our solution into a module.
-
-### Step 3 – Package the solution into a portable one:
-
-Download and install the Features module using composer.
-
-`composer require drupal/features`
-
-While creating a feature, once you select the content type for NFL teams, this will automatically pull in related data like the fields, views, and feeds related to the NFL content type as shown below. Isn't this cool?
-![NFL Team Feature creation](images/NFL_Teams_feature.png)
-
-Now clicking on the *Write* button generates the related configuration as a custom module which you can install in your site. The module thus generated is the `nfl_team_feature` module as in this repo.
